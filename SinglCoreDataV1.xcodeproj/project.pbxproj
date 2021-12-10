@@ -16,6 +16,7 @@
 		803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */; };
 		803C6C14275E49CC003E0761 /* AnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803C6C12275E49CC003E0761 /* AnimalTableViewCell.xib */; };
 		8053B134275F9B930072D793 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053B133275F9B930072D793 /* CoreData.swift */; };
+		8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053B13527623D9D0072D793 /* CoreDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		803C6C12275E49CC003E0761 /* AnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTableViewCell.xib; sourceTree = "<group>"; };
 		8053B133275F9B930072D793 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		8053B13527623D9D0072D793 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				803C6BF6275E34E6003E0761 /* AppDelegate.swift */,
 				8053B133275F9B930072D793 /* CoreData.swift */,
+				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
 				803C6C0D275E479C003E0761 /* AnimalsListViewController.swift */,
 				803C6C0E275E479C003E0761 /* AnimalsListViewController.xib */,
 				803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */,
@@ -152,6 +155,7 @@
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
+				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

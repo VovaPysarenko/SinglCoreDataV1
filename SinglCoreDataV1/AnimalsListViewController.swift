@@ -15,6 +15,8 @@ class AnimalsListViewController: UIViewController {
     
     var context: NSManagedObjectContext!
     var animals: [Animal] = []
+    var coreDataProvider = CoreDataProvider()
+    let uuid = UUID().uuidString
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class AnimalsListViewController: UIViewController {
         let nibName  = UINib(nibName: "AnimalTableViewCell", bundle: nil)
         animalTableView.register(nibName, forCellReuseIdentifier: "AnimalTableViewCell")
         getAnimals()
+
     }
     
     @IBAction func addAnimalPressed(_ sender: Any) {
@@ -39,8 +42,10 @@ class AnimalsListViewController: UIViewController {
             guard let textFields = alertController.textFields else {return}
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
-            self.saveAnimal(name: name, type: type)
-            self.animals.sort { $0.name! < $1.name! }
+            let animal = AnimalEntity(id: self.uuid, name: name, type: type, timestamp: Date().currentTimeMillis())
+            self.coreDataProvider.saveAnimal(animal: animal)
+//            self.saveAnimal(name: name, type: type)
+//            self.animals.sort { $0.name! < $1.name!}
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
@@ -50,7 +55,24 @@ class AnimalsListViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func saveAnimal(name: String, type: String) {
+//    func saveAnimal(name: String, type: String) {
+//        let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
+//        guard let entity = entity else {return}
+//        print("fastPrint entityentityentity   \(entity)")
+//        guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return}
+//        animalObject.name = name
+//        animalObject.type = type
+//
+//        do {
+//            try context.save()
+//            animals.append(animalObject)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//        print("fastPrint self.animals   self.animals \(self.animals)")
+//    }
+    
+    func editAnimal(name: String, type: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
         guard let entity = entity else {return}
         guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return}
@@ -59,11 +81,13 @@ class AnimalsListViewController: UIViewController {
         
         do {
             try context.save()
-            animals.append(animalObject)
         } catch {
             print(error.localizedDescription)
         }
+        self.animalTableView.reloadData()
+
     }
+    
     
     func getAnimals() {
         do {
@@ -107,4 +131,41 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
             
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let animal = animals[indexPath.row]
+        print("fastPrint   ----name------   \(animal.name)")
+        print("fastPrint   -----type-----   \(animal.type)")
+
+        let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = animal.name
+            textField.placeholder = "Name"
+        }
+        alertController.addTextField { (textField) in
+            textField.text = animal.type
+            textField.placeholder = "Type"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let textFields = alertController.textFields else {return}
+            guard let name = textFields[0].text else {return}
+            guard let type = textFields[1].text else {return}
+            self.editAnimal(name: name, type: type)
+            self.animals.sort { $0.name! < $1.name! }
+            self.animalTableView.reloadData()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension Date {
+  func currentTimeMillis() -> Int64 {
+    return Int64(self.timeIntervalSince1970 * 1000)
+  }
 }
