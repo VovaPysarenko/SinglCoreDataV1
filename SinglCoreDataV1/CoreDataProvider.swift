@@ -17,50 +17,49 @@ class CoreDataProvider: CoreData {
         let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
         guard let entity = entity else {return [] }
         guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return []}
+        guard let timestamp = animal.timestamp else {return []}
         animalObject.id = animal.id
         animalObject.name = animal.name
         animalObject.type = animal.type
-        animalObject.timestamp = animal.timestamp
+        animalObject.timestamp = timestamp
         
         saveContext()
-        print("fastPrint animalObject.name    \(animalObject.name)")
-
         return getAnimals()
     }
     
     func getAnimals() -> [AnimalEntity] {
         let context = persistentContainer.viewContext
-
         do {
-            var animals = try context.fetch(Animal.fetchRequest())
-            print("fastPrint animalsanimals   animals \(animals)")
-//            animals.sort { $0.name! < $1.name! }
+            let animals = try context.fetch(Animal.fetchRequest())
+            let animalItem = animals.compactMap { AnimalEntity(id: $0.id, name: $0.name, type: $0.type, timestamp: $0.timestamp) }
+            let sortedAnimal = animalItem.sorted(by: {$0.name! < $1.name!})
+            
+            return sortedAnimal
         } catch {
             print(error.localizedDescription)
+            return []
         }
-//        let d = animals
-//        print("fastPrint animalanimalanimal  \(animal)")
-//        print("fastPrint ddddd \(d)")
-        return animals
-        
-        
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Animal")
-//        request.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(request)
-//            guard let savedDevices = result as? [Animal] else {return []}
-//            return savedDevices
-//        } catch {
-//            print("Failed")
-//            return []
-//        }
     }
     
+    func removeAnimal(animal: AnimalEntity) -> [AnimalEntity] {
+        let context = persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
+        guard let entity = entity else {return [] }
+        guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return []}
+        guard let timestamp = animal.timestamp else {return []}
+        animalObject.id = animal.id
+        animalObject.name = animal.name
+        animalObject.type = animal.type
+        animalObject.timestamp = timestamp
+        
+        saveContext()
+        return getAnimals()
+    }
 }
 
 struct AnimalEntity {
-    let id: String
+    let id: String?
     let name: String?
     let type: String?
-    let timestamp: Int64
+    let timestamp: Int64?
 }

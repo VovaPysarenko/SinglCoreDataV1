@@ -14,7 +14,7 @@ class AnimalsListViewController: UIViewController {
     @IBOutlet weak var animalTableView: UITableView!
     
     var context: NSManagedObjectContext!
-    var animals: [AnimalEntity] = []
+    var animals = [AnimalEntity]()
     var coreDataProvider = CoreDataProvider()
     
     override func viewDidLoad() {
@@ -24,8 +24,7 @@ class AnimalsListViewController: UIViewController {
         animalTableView.delegate = self
         let nibName  = UINib(nibName: "AnimalTableViewCell", bundle: nil)
         animalTableView.register(nibName, forCellReuseIdentifier: "AnimalTableViewCell")
-        coreDataProvider.getAnimals()
-
+        self.animals = self.coreDataProvider.getAnimals()
     }
     
     @IBAction func addAnimalPressed(_ sender: Any) {
@@ -42,23 +41,15 @@ class AnimalsListViewController: UIViewController {
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-//            self.coreDataProvider.saveAnimal(animal: animal)
-            let aaaaaa = self.coreDataProvider.saveAnimal(animal: animal)
-            print("fastPrint aaaaaaa       \(aaaaaa)")
-//            self.animals.append(aaaaaa)
-            print("fastPrint self.animalsself.animals  \(self.animals)")
-//            self.saveAnimal(name: name, type: type)
-//            self.animals.sort { $0.name! < $1.name!}
-//            self.animalTableView.reloadData()
+            self.coreDataProvider.saveAnimal(animal: animal)
+            self.animals = self.coreDataProvider.getAnimals()
+            self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
         
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
-        
-        self.coreDataProvider.getAnimals()
-        self.animalTableView.reloadData()
     }
     
 //    func saveAnimal(name: String, type: String) {
@@ -91,9 +82,7 @@ class AnimalsListViewController: UIViewController {
             print(error.localizedDescription)
         }
         self.animalTableView.reloadData()
-
     }
-    
     
 //    func getAnimals() {
 //        do {
@@ -132,16 +121,16 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let animal = animals[indexPath.row] as? Animal else {return}
         if editingStyle == .delete {
             context.delete(animal)
+            self.coreDataProvider.getAnimals()
             animals.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let animal = animals[indexPath.row]
-        print("fastPrint   ----name------   \(animal.name)")
-        print("fastPrint   -----type-----   \(animal.type)")
+//        print("fastPrint   ----name------   \(animal.name)")
+//        print("fastPrint   -----type-----   \(animal.type)")
 
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
@@ -157,7 +146,7 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             self.editAnimal(name: name, type: type)
-            self.animals.sort { $0.name! < $1.name! }
+//            self.animals.sort { $0.name! < $1.name! }
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
