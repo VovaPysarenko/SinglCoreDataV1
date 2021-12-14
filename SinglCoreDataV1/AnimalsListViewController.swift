@@ -8,7 +8,6 @@
 import UIKit
 import CoreData
 
-
 class AnimalsListViewController: UIViewController {
     
     @IBOutlet weak var animalTableView: UITableView!
@@ -51,24 +50,7 @@ class AnimalsListViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
-    
-//    func saveAnimal(name: String, type: String) {
-//        let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
-//        guard let entity = entity else {return}
-//        print("fastPrint entityentityentity   \(entity)")
-//        guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return}
-//        animalObject.name = name
-//        animalObject.type = type
-//
-//        do {
-//            try context.save()
-//            animals.append(animalObject)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        print("fastPrint self.animals   self.animals \(self.animals)")
-//    }
-    
+
     func editAnimal(name: String, type: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
         guard let entity = entity else {return}
@@ -83,17 +65,6 @@ class AnimalsListViewController: UIViewController {
         }
         self.animalTableView.reloadData()
     }
-    
-//    func getAnimals() {
-//        do {
-//            self.animals = try context.fetch(Animal.fetchRequest())
-//            self.animals.sort { $0.name! < $1.name! }
-//            print("fastPrint==========     \(self.animals)")
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        self.animalTableView.reloadData()
-//    }
 }
 
 extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -118,10 +89,10 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        guard let animal = animals[indexPath.row] as? Animal else {return}
+        guard let animal = animals[indexPath.row] as? AnimalEntity else {return}
+        print("fastPrint ----animal----  \(animal)")
         if editingStyle == .delete {
-            context.delete(animal)
-            self.coreDataProvider.getAnimals()
+            self.coreDataProvider.removeAnimal(animal: animal)
             animals.remove(at: indexPath.item)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -146,7 +117,6 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             self.editAnimal(name: name, type: type)
-//            self.animals.sort { $0.name! < $1.name! }
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }

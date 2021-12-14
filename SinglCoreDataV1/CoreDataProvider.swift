@@ -43,16 +43,19 @@ class CoreDataProvider: CoreData {
     
     func removeAnimal(animal: AnimalEntity) -> [AnimalEntity] {
         let context = persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
-        guard let entity = entity else {return [] }
-        guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return []}
-        guard let timestamp = animal.timestamp else {return []}
-        animalObject.id = animal.id
-        animalObject.name = animal.name
-        animalObject.type = animal.type
-        animalObject.timestamp = timestamp
-        
-        saveContext()
+
+        do {
+            let animals = try context.fetch(Animal.fetchRequest())
+
+            for item in animals {
+                if item.id == animal.id {
+                    context.delete(item)
+                }
+                saveContext()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
         return getAnimals()
     }
 }
