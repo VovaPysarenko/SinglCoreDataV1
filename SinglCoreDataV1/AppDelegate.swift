@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController.init(rootViewController: mainVC)
         window?.makeKeyAndVisible()
         window?.rootViewController = navigationController
-        mainVC.context = coreData.persistentContainer.viewContext
+        print("file", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "")
+//        mainVC.context = coreData.persistentContainer.viewContext
         return true
     }
     

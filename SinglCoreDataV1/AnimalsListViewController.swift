@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import CoreData
 
 class AnimalsListViewController: UIViewController {
     
     @IBOutlet weak var animalTableView: UITableView!
     
-    var context: NSManagedObjectContext!
     var animals = [AnimalEntity]()
     var coreDataProvider = CoreDataProvider()
     
@@ -40,8 +38,7 @@ class AnimalsListViewController: UIViewController {
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-            self.coreDataProvider.saveAnimal(animal: animal)
-            self.animals = self.coreDataProvider.getAnimals()
+            self.animals = self.coreDataProvider.saveAnimal(animal: animal)
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
@@ -49,21 +46,6 @@ class AnimalsListViewController: UIViewController {
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
-    }
-
-    func editAnimal(name: String, type: String) {
-        let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
-        guard let entity = entity else {return}
-        guard let animalObject = NSManagedObject(entity: entity, insertInto: context) as? Animal else {return}
-        animalObject.name = name
-        animalObject.type = type
-        
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-        self.animalTableView.reloadData()
     }
 }
 
@@ -90,7 +72,6 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         guard let animal = animals[indexPath.row] as? AnimalEntity else {return}
-        print("fastPrint ----animal----  \(animal)")
         if editingStyle == .delete {
             self.coreDataProvider.removeAnimal(animal: animal)
             animals.remove(at: indexPath.item)
@@ -100,9 +81,7 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let animal = animals[indexPath.row]
-//        print("fastPrint   ----name------   \(animal.name)")
-//        print("fastPrint   -----type-----   \(animal.type)")
-
+        
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = animal.name
@@ -116,7 +95,13 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
             guard let textFields = alertController.textFields else {return}
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
-            self.editAnimal(name: name, type: type)
+            
+            for item in self.animals {
+                if item.id == animal.id {
+                    let newAnimal = AnimalEntity(id: animal.id, name: name, type: type, timestamp: Date().currentTimeMillis())
+                    self.animals = self.coreDataProvider.editAnimal(animal: newAnimal)
+                }
+            }
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
@@ -130,7 +115,7 @@ extension AnimalsListViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension Date {
-  func currentTimeMillis() -> Int64 {
-    return Int64(self.timeIntervalSince1970 * 1000)
-  }
+    func currentTimeMillis() -> Int64 {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
 }

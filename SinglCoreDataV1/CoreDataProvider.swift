@@ -10,8 +10,6 @@ import CoreData
 
 class CoreDataProvider: CoreData {
     
-//    var context: NSManagedObjectContext!
-
     func saveAnimal(animal: AnimalEntity) -> [AnimalEntity] {
         let context = persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Animal", in: context)
@@ -32,7 +30,9 @@ class CoreDataProvider: CoreData {
         do {
             let animals = try context.fetch(Animal.fetchRequest())
             let animalItem = animals.compactMap { AnimalEntity(id: $0.id, name: $0.name, type: $0.type, timestamp: $0.timestamp) }
-            let sortedAnimal = animalItem.sorted(by: {$0.name! < $1.name!})
+            print("fastPrint animalItem     \(animalItem)")
+            let sortedAnimal = animalItem.sorted(by: {$0.timestamp! > $1.timestamp!})
+            print("fastPrint  sortedAnimal    \(sortedAnimal)")
             
             return sortedAnimal
         } catch {
@@ -41,15 +41,34 @@ class CoreDataProvider: CoreData {
         }
     }
     
-    func removeAnimal(animal: AnimalEntity) -> [AnimalEntity] {
+    func removeAnimal(animal: AnimalEntity) {
         let context = persistentContainer.viewContext
-
+        
         do {
             let animals = try context.fetch(Animal.fetchRequest())
-
+            
             for item in animals {
                 if item.id == animal.id {
                     context.delete(item)
+                }
+                saveContext()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func editAnimal(animal: AnimalEntity) -> [AnimalEntity] {
+        let context = persistentContainer.viewContext
+        
+        do {
+            let animals = try context.fetch(Animal.fetchRequest())
+            for item in animals {
+                if item.id == animal.id {
+                    item.id = animal.id
+                    item.name = animal.name
+                    item.type = animal.type
+                    item.timestamp = animal.timestamp!
                 }
                 saveContext()
             }
