@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,17 +38,26 @@
                             <constraint firstAttribute="height" constant="120" id="3ZZ-8u-Dbt"/>
                         </constraints>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.10.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhG-mx-RvO">
+                        <rect key="frame" x="306.5" y="125" width="52.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="CdF-8A-hks" secondAttribute="bottom" id="Fjv-3S-L0S"/>
                     <constraint firstItem="CdF-8A-hks" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JxP-KV-QBS"/>
+                    <constraint firstItem="PhG-mx-RvO" firstAttribute="top" secondItem="CdF-8A-hks" secondAttribute="bottom" constant="5" id="Pwn-e4-gT9"/>
                     <constraint firstAttribute="trailing" secondItem="CdF-8A-hks" secondAttribute="trailing" id="g63-y6-sax"/>
+                    <constraint firstItem="PhG-mx-RvO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="5" id="jzu-Do-R63"/>
                     <constraint firstItem="CdF-8A-hks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lXU-P0-Tsf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="tintColor" systemColor="labelColor"/>
             <connections>
+                <outlet property="dateLabel" destination="PhG-mx-RvO" id="Lc5-Yw-TGZ"/>
                 <outlet property="nameLabel" destination="JcU-sT-qmc" id="bNh-QC-IXl"/>
                 <outlet property="typeLabel" destination="4da-Jp-CmS" id="p8i-Np-Jhf"/>
             </connections>
