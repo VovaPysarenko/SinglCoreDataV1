@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimalsListViewController" customModule="SinglCoreDataV1" customModuleProvider="target">
             <connections>
-                <outlet property="animalTableView" destination="RRs-vE-pNG" id="wTW-dm-dgS"/>
+                <outlet property="animalTableView" destination="RRs-vE-pNG" id="myB-Zq-QKU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
