@@ -18,6 +18,8 @@
 		8053B134275F9B930072D793 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053B133275F9B930072D793 /* CoreData.swift */; };
 		8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8053B13527623D9D0072D793 /* CoreDataProvider.swift */; };
 		805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */; };
+		A2DB92D427733F420007F87C /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB92D327733F420007F87C /* AnimalPresenter.swift */; };
+		A2DB92D62773430E0007F87C /* AnimalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DB92D52773430E0007F87C /* AnimalConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		8053B133275F9B930072D793 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		8053B13527623D9D0072D793 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsTableView.swift; sourceTree = "<group>"; };
+		A2DB92D327733F420007F87C /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
+		A2DB92D52773430E0007F87C /* AnimalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				803C6C04275E34E8003E0761 /* LaunchScreen.storyboard */,
 				803C6C07275E34E8003E0761 /* Info.plist */,
 				803C6BFF275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld */,
+				A2DB92D327733F420007F87C /* AnimalPresenter.swift */,
+				A2DB92D52773430E0007F87C /* AnimalConfigurator.swift */,
 			);
 			path = SinglCoreDataV1;
 			sourceTree = "<group>";
@@ -156,10 +162,12 @@
 			files = (
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
+				A2DB92D427733F420007F87C /* AnimalPresenter.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
 				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
+				A2DB92D62773430E0007F87C /* AnimalConfigurator.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +309,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LFK66LU3C4;
+				DEVELOPMENT_TEAM = 7QWPMKUD6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SinglCoreDataV1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LFK66LU3C4;
+				DEVELOPMENT_TEAM = 7QWPMKUD6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SinglCoreDataV1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

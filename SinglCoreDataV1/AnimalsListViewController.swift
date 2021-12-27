@@ -7,14 +7,16 @@
 
 import UIKit
 
-class AnimalsListViewController: UIViewController {
+class AnimalsListViewController: UIViewController, AnimalViewProtocol {
+    var presenter: AnimalPresenterProtocol!
+    
     
     @IBOutlet weak var animalTableView: AnimalsTableView!
     var coreDataProvider = CoreDataProvider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter.getData()
         let nibName  = UINib(nibName: "AnimalTableViewCell", bundle: nil)
         animalTableView.register(nibName, forCellReuseIdentifier: "AnimalTableViewCell")
         animalTableView.delegate = animalTableView

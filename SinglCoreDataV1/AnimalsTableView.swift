@@ -33,7 +33,7 @@ class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        guard let animal = animals[indexPath.row] as? AnimalEntity else {return}
+        let animal = animals[indexPath.row] 
         if editingStyle == .delete {
             self.animalProtocol?.removeAnimal(animal: animal)
             animals.remove(at: indexPath.item)
