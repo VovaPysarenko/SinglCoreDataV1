@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
+		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
+		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
+		1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989082773677E00C93BB6 /* AnimalConfigurator.swift */; };
+		1DF9890B2773679200C93BB6 /* AnimalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9890A2773679200C93BB6 /* AnimalProtocols.swift */; };
 		803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803C6BF6275E34E6003E0761 /* AppDelegate.swift */; };
 		803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 803C6BFF275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld */; };
 		803C6C03275E34E8003E0761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803C6C02275E34E8003E0761 /* Assets.xcassets */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
+		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
+		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
+		1DF989082773677E00C93BB6 /* AnimalConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalConfigurator.swift; sourceTree = "<group>"; };
+		1DF9890A2773679200C93BB6 /* AnimalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalProtocols.swift; sourceTree = "<group>"; };
 		803C6BF3275E34E6003E0761 /* SinglCoreDataV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinglCoreDataV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		803C6BF6275E34E6003E0761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		803C6C00275E34E6003E0761 /* SinglCoreDataV1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SinglCoreDataV1.xcdatamodel; sourceTree = "<group>"; };
@@ -47,6 +57,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2146592779C5BE00A75F69 /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				803C6C0D275E479C003E0761 /* AnimalsListViewController.swift */,
+				1DF989022773671900C93BB6 /* AnimalPresenter.swift */,
+				1DF989042773673A00C93BB6 /* AnimalInteractor.swift */,
+				1DF989062773675300C93BB6 /* AnimalRouter.swift */,
+				1DF989082773677E00C93BB6 /* AnimalConfigurator.swift */,
+				1DF9890A2773679200C93BB6 /* AnimalProtocols.swift */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
 		803C6BEA275E34E6003E0761 = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +92,7 @@
 				803C6BF6275E34E6003E0761 /* AppDelegate.swift */,
 				8053B133275F9B930072D793 /* CoreData.swift */,
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
-				803C6C0D275E479C003E0761 /* AnimalsListViewController.swift */,
+				1D2146592779C5BE00A75F69 /* Viper */,
 				805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */,
 				803C6C0E275E479C003E0761 /* AnimalsListViewController.xib */,
 				803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */,
@@ -154,13 +177,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */,
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
+				1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */,
+				1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
 				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
+				1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */,
+				1DF9890B2773679200C93BB6 /* AnimalProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

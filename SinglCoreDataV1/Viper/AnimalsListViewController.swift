@@ -11,16 +11,21 @@ class AnimalsListViewController: UIViewController {
     
     @IBOutlet weak var animalTableView: AnimalsTableView!
     var coreDataProvider = CoreDataProvider()
+    var presenter: AnimalPresenterProtocol!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let nibName  = UINib(nibName: "AnimalTableViewCell", bundle: nil)
         animalTableView.register(nibName, forCellReuseIdentifier: "AnimalTableViewCell")
+        
         animalTableView.delegate = animalTableView
         animalTableView.dataSource = animalTableView
-        animalTableView.animalProtocol = self
-        animalTableView.animals = coreDataProvider.getAnimals()
+        presenter.viewDidLoad()
+
+//        animalTableView.animalProtocol = self
+//        animalTableView.animals = coreDataProvider.getAnimals()
     }
     
     @IBAction func addAnimalPressed(_ sender: Any) {
@@ -49,9 +54,9 @@ class AnimalsListViewController: UIViewController {
 }
 
 extension AnimalsListViewController: AnimalProtocol {
-    func removeAnimal(animal: AnimalEntity) {
-        self.coreDataProvider.removeAnimal(animal: animal)
-    }
+//    func removeAnimal(animal: AnimalEntity) {
+//        self.coreDataProvider.removeAnimal(animal: animal)
+//    }
     
     func editAnimal(animal: AnimalEntity) {
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
@@ -85,7 +90,7 @@ extension AnimalsListViewController: AnimalProtocol {
 }
 
 protocol AnimalProtocol: AnyObject {
-    func removeAnimal(animal: AnimalEntity)
+//    func removeAnimal(animal: AnimalEntity)
     func editAnimal(animal: AnimalEntity)
 }
 
@@ -94,4 +99,7 @@ extension Date {
     func currentTimeMillis() -> Int64 {
         return Int64(self.timeIntervalSince1970 * 1000)
     }
+}
+extension AnimalsListViewController: AnimalViewProtocol {
+
 }

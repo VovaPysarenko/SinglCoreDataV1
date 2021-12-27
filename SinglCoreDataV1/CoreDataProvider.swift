@@ -30,9 +30,7 @@ class CoreDataProvider: CoreData {
         do {
             let animals = try context.fetch(Animal.fetchRequest())
             let animalItem = animals.compactMap { AnimalEntity(id: $0.id, name: $0.name, type: $0.type, timestamp: $0.timestamp) }
-            print("fastPrint animalItem     \(animalItem)")
             let sortedAnimal = animalItem.sorted(by: {$0.timestamp! > $1.timestamp!})
-            print("fastPrint  sortedAnimal    \(sortedAnimal)")
             
             return sortedAnimal
         } catch {
