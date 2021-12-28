@@ -10,7 +10,6 @@ import UIKit
 class AnimalsListViewController: UIViewController {
     
     @IBOutlet weak var animalTableView: AnimalsTableView!
-    var coreDataProvider = CoreDataProvider()
     var presenter: AnimalPresenterProtocol!
 
     
@@ -22,8 +21,8 @@ class AnimalsListViewController: UIViewController {
         
         animalTableView.delegate = animalTableView
         animalTableView.dataSource = animalTableView
-        presenter.viewDidLoad()
 
+        presenter.viewDidLoad()
 //        animalTableView.animalProtocol = self
 //        animalTableView.animals = coreDataProvider.getAnimals()
     }
@@ -42,7 +41,8 @@ class AnimalsListViewController: UIViewController {
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-            self.animalTableView.animals = self.coreDataProvider.saveAnimal(animal: animal)
+//            self.animalTableView.animals = self.coreDataProvider.saveAnimal(animal: animal)
+            self.presenter.addAnimal(animal: animal)
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
@@ -53,10 +53,12 @@ class AnimalsListViewController: UIViewController {
     }
 }
 
-extension AnimalsListViewController: AnimalProtocol {
-//    func removeAnimal(animal: AnimalEntity) {
+extension AnimalsListViewController: AnimalTableViewProtocol {
+    func removeAnimal(animal: AnimalEntity) {
 //        self.coreDataProvider.removeAnimal(animal: animal)
-//    }
+        self.presenter.removeAnimal(animal: animal)
+
+    }
     
     func editAnimal(animal: AnimalEntity) {
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
@@ -76,7 +78,7 @@ extension AnimalsListViewController: AnimalProtocol {
             for item in self?.animalTableView.animals ?? [] {
                 if item.id == animal.id {
                     let newAnimal = AnimalEntity(id: animal.id, name: name, type: type, timestamp: Date().currentTimeMillis())
-                    self?.animalTableView.animals = self?.coreDataProvider.editAnimal(animal: newAnimal) ?? []
+//                    self?.animalTableView.animals = self?.coreDataProvider.editAnimal(animal: newAnimal) ?? []
                 }
             }
             self?.animalTableView.reloadData()
@@ -89,17 +91,15 @@ extension AnimalsListViewController: AnimalProtocol {
     }
 }
 
-protocol AnimalProtocol: AnyObject {
-//    func removeAnimal(animal: AnimalEntity)
-    func editAnimal(animal: AnimalEntity)
-}
 
 
-extension Date {
-    func currentTimeMillis() -> Int64 {
-        return Int64(self.timeIntervalSince1970 * 1000)
-    }
-}
+
+//extension Date {
+//    func currentTimeMillis() -> Int64 {
+//        return Int64(self.timeIntervalSince1970 * 1000)
+//    }
+//}
 extension AnimalsListViewController: AnimalViewProtocol {
+    
 
 }

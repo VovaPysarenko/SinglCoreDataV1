@@ -8,7 +8,7 @@
 import Foundation
 
 class AnimalInteractor: NSObject {
-    weak var presenter: AnimalIneractorOutputProtocol!
+    weak var presenter: AnimalInteractorOutputProtocol!
     var coreDataProvider = CoreDataProvider()
     
     var animals = [AnimalEntity]()
@@ -16,7 +16,7 @@ class AnimalInteractor: NSObject {
 }
 
 // MARK: - Extensions
-extension AnimalInteractor: AnimalIneractorInputProtocol {
+extension AnimalInteractor: AnimalInteractorInputProtocol {
     func getAnimals() {
         self.animals = coreDataProvider.getAnimals()
     }
@@ -30,10 +30,16 @@ extension AnimalInteractor: AnimalIneractorInputProtocol {
     }
     
     func addAnimal(animal: AnimalEntity) {
-        
+//        let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
+        self.animals = self.coreDataProvider.saveAnimal(animal: animal)
     }
     
-    
-   
 }
 
+
+
+extension Date {
+    func currentTimeMillis() -> Int64 {
+        return Int64(self.timeIntervalSince1970 * 1000)
+    }
+}

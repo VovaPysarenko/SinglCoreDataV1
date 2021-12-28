@@ -7,12 +7,13 @@
 
 import UIKit
 
-class AnimalConfigurator {
+class AnimalConfigurator: NSObject {
     static func create() -> UIViewController {
         let view = AnimalsListViewController()
-        let presenter: AnimalPresenterProtocol & AnimalIneractorOutputProtocol = AnimalPresenter()
-        let interactor: AnimalIneractorInputProtocol = AnimalInteractor()
-        let router: AnimalRouterProtocol = AnimalRouter()
+        let presenter = AnimalPresenter()
+        let interactor = AnimalInteractor()
+        let router = AnimalRouter()
+        
         presenter.view = view
         view.presenter = presenter
         interactor.presenter = presenter

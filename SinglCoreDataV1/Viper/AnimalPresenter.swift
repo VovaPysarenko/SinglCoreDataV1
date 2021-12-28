@@ -8,7 +8,7 @@
 class AnimalPresenter {
     
     weak var view: AnimalViewProtocol!
-    var interactor: AnimalIneractorInputProtocol!
+    var interactor: AnimalInteractorInputProtocol!
     var router: AnimalRouterProtocol!
     
     func viewDidLoad() {
@@ -17,10 +17,20 @@ class AnimalPresenter {
 }
 
 extension AnimalPresenter : AnimalPresenterProtocol {
+    func addAnimal(animal: AnimalEntity) {
+        interactor.addAnimal(animal: animal)
+    }
+    
+    func removeAnimal(animal: AnimalEntity) {
+        interactor.removeAnimal(animal: animal)
+        
+    }
 
 }
 
-extension AnimalPresenter: AnimalIneractorOutputProtocol {
+extension AnimalPresenter: AnimalInteractorOutputProtocol {
+
+    
     
 }
 

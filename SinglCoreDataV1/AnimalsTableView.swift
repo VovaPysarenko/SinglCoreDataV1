@@ -11,7 +11,7 @@ import CloudKit
 class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     var animals = [AnimalEntity]()
-    weak var animalProtocol: AnimalProtocol?
+    weak var animalProtocol: AnimalTableViewProtocol?
     
     func timestampToDate(timestamp: Int64) -> String {
         

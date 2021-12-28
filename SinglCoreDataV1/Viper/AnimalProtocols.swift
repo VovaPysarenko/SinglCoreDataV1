@@ -8,21 +8,23 @@
 
 protocol AnimalPresenterProtocol: AnyObject {
     var view: AnimalViewProtocol! { get set }
-    var interactor: AnimalIneractorInputProtocol! { get set }
+    var interactor: AnimalInteractorInputProtocol! { get set }
     var router: AnimalRouterProtocol! { get set }
     func viewDidLoad()
+    func removeAnimal(animal: AnimalEntity)
+    func addAnimal(animal: AnimalEntity)
 }
 
-protocol AnimalIneractorOutputProtocol: AnyObject {
+protocol AnimalInteractorOutputProtocol: AnyObject {
 
 }
 
-protocol AnimalIneractorInputProtocol: AnyObject {
+protocol AnimalInteractorInputProtocol: AnyObject {
+    var presenter: AnimalInteractorOutputProtocol! { get set }
     func getAnimals()
     func removeAnimal(animal: AnimalEntity)
     func editAnimal(animal: AnimalEntity)
     func addAnimal(animal: AnimalEntity)
-    var presenter: AnimalIneractorOutputProtocol! { get set }
 
 }
 
@@ -33,4 +35,9 @@ protocol AnimalRouterProtocol: AnyObject {
 protocol AnimalViewProtocol: AnyObject {
     var presenter: AnimalPresenterProtocol! { get set }
 
+}
+
+protocol AnimalTableViewProtocol: AnyObject {
+    func removeAnimal(animal: AnimalEntity)
+    func editAnimal(animal: AnimalEntity)
 }
