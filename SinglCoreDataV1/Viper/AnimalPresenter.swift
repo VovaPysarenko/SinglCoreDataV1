@@ -14,17 +14,21 @@ class AnimalPresenter {
     func viewDidLoad() {
         interactor.getAnimals()
     }
+    
 }
 
 extension AnimalPresenter : AnimalPresenterProtocol {
-    func addAnimal(animal: AnimalEntity) {
-        interactor.addAnimal(animal: animal)
+    func saveAnimal(animal: AnimalEntity) {
+        interactor.saveAnimal(animal: animal)
     }
     
     func removeAnimal(animal: AnimalEntity) {
         interactor.removeAnimal(animal: animal)
-        
     }
+    func getAnimal() {
+        interactor.getAnimals()
+    }
+    
 
 }
 

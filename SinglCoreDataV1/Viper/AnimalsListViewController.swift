@@ -8,9 +8,9 @@
 import UIKit
 
 class AnimalsListViewController: UIViewController {
+    var presenter: AnimalPresenterProtocol!
     
     @IBOutlet weak var animalTableView: AnimalsTableView!
-    var presenter: AnimalPresenterProtocol!
 
     
     override func viewDidLoad() {
@@ -21,10 +21,9 @@ class AnimalsListViewController: UIViewController {
         
         animalTableView.delegate = animalTableView
         animalTableView.dataSource = animalTableView
-
         presenter.viewDidLoad()
-//        animalTableView.animalProtocol = self
-//        animalTableView.animals = coreDataProvider.getAnimals()
+        updateArrayAnimals(animals: self.presenter.interactor.animals)
+        animalTableView.animalProtocol = self
     }
     
     @IBAction func addAnimalPressed(_ sender: Any) {
@@ -41,8 +40,10 @@ class AnimalsListViewController: UIViewController {
             guard let name = textFields[0].text else {return}
             guard let type = textFields[1].text else {return}
             let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-//            self.animalTableView.animals = self.coreDataProvider.saveAnimal(animal: animal)
-            self.presenter.addAnimal(animal: animal)
+            self.presenter.saveAnimal(animal: animal)
+            self.updateArrayAnimals(animals: self.presenter.interactor.animals)
+//            print("----FASTPRINT---- self.animalTableView.animals \(self.animalTableView.animals)")
+//            print("----FASTPRINT---- self.presenter.interactor.animals \(self.presenter.interactor.animals)")
             self.animalTableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
@@ -57,8 +58,9 @@ extension AnimalsListViewController: AnimalTableViewProtocol {
     func removeAnimal(animal: AnimalEntity) {
 //        self.coreDataProvider.removeAnimal(animal: animal)
         self.presenter.removeAnimal(animal: animal)
-
+        self.updateArrayAnimals(animals: self.presenter.interactor.animals)
     }
+
     
     func editAnimal(animal: AnimalEntity) {
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
@@ -91,15 +93,12 @@ extension AnimalsListViewController: AnimalTableViewProtocol {
     }
 }
 
-
-
-
-//extension Date {
-//    func currentTimeMillis() -> Int64 {
-//        return Int64(self.timeIntervalSince1970 * 1000)
-//    }
-//}
 extension AnimalsListViewController: AnimalViewProtocol {
-    
-
+    func updateArrayAnimals(animals: [AnimalEntity]?) {
+        if let animals = animals {
+            self.animalTableView.animals = animals
+        } else {
+            self.animalTableView.animals = []
+        }
+    }
 }

@@ -17,19 +17,21 @@ class AnimalInteractor: NSObject {
 
 // MARK: - Extensions
 extension AnimalInteractor: AnimalInteractorInputProtocol {
+
     func getAnimals() {
         self.animals = coreDataProvider.getAnimals()
     }
     
     func removeAnimal(animal: AnimalEntity) {
         self.coreDataProvider.removeAnimal(animal: animal)
+        print("----FASTPRINT--removeAnimal--   \(self.animals)")
     }
     
     func editAnimal(animal: AnimalEntity) {
         
     }
     
-    func addAnimal(animal: AnimalEntity) {
+    func saveAnimal(animal: AnimalEntity) {
 //        let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
         self.animals = self.coreDataProvider.saveAnimal(animal: animal)
     }
