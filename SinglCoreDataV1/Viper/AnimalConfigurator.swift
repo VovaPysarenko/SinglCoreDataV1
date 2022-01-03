@@ -10,9 +10,9 @@ import UIKit
 class AnimalConfigurator {
     static func create() -> UIViewController {
         let view = AnimalsListViewController()
-        let presenter: AnimalPresenterProtocol & AnimalInteractorOutputProtocol = AnimalPresenter()
-        let interactor: AnimalInteractorInputProtocol = AnimalInteractor()
-        let router: AnimalRouterProtocol = AnimalRouter()
+        let presenter = AnimalPresenter()
+        let interactor = AnimalInteractor()
+        let router = AnimalRouter()
         presenter.view = view
         view.presenter = presenter
         interactor.presenter = presenter

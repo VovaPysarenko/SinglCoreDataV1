@@ -6,16 +6,13 @@
 //
 
 import UIKit
-import CloudKit
 
 class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     var animals = [AnimalEntity]()
-    
     weak var animalProtocol: AnimalTableViewProtocol?
     
     func timestampToDate(timestamp: Int64) -> String {
-        
         let toDoubleTime = Double(timestamp) / 1000
         let date = Date(timeIntervalSince1970: toDoubleTime)
         let formatter = DateFormatter()
@@ -24,20 +21,14 @@ class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
         return formatter.string(from: date)
     }
 
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("----FASTPRINT---- animals-----------------\(animals.count)")
         return animals.count
-    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as? AnimalTableViewCell {
             let animal = animals[indexPath.row]
-            print("----FASTPRINT----}}}}}}}}}}}}}}}}}}}}} \(animal)")
             let time = timestampToDate(timestamp: animal.timestamp!)
-
-//            print("----FASTPRINT---- \(time)")
             cell.nameLabel.text = animal.name
             cell.typeLabel.text = animal.type
             cell.dateLabel.text = time

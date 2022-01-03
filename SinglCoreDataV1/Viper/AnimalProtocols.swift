@@ -5,6 +5,8 @@
 //  Created by Volodymyr Pysarenko on 22.12.2021.
 //
 
+import Foundation
+
 protocol AnimalTableViewProtocol: AnyObject {
     func removeAnimal(animal: AnimalEntity)
     func editAnimal(animal: AnimalEntity)
@@ -16,20 +18,19 @@ protocol AnimalPresenterProtocol: AnyObject {
     var router: AnimalRouterProtocol! { get set }
     func viewDidLoad()
     func removeAnimal(animal: AnimalEntity)
-    func saveAnimal(animal: AnimalEntity)
-    func getAnimal()
+    func addAnimal(name: String, type: String)
+    func editeAnimal(name: String, type: String, id: String)
 }
 
-protocol AnimalInteractorOutputProtocol: AnyObject {
-
+protocol AnimalPresenterOutputProtocol: AnyObject {
+    func getSavedAnimals(animals: [AnimalEntity])
 }
 
 protocol AnimalInteractorInputProtocol: AnyObject {
-    var presenter: AnimalInteractorOutputProtocol! { get set }
-    var animals: [AnimalEntity] { get set }
+    var presenter: AnimalPresenterOutputProtocol! { get set }
     func getAnimals()
     func removeAnimal(animal: AnimalEntity)
-    func editAnimal(animal: AnimalEntity)
+    func editeAnimal(animal: AnimalEntity)
     func saveAnimal(animal: AnimalEntity)
 }
 
@@ -39,7 +40,7 @@ protocol AnimalRouterProtocol: AnyObject {
 
 protocol AnimalViewProtocol: AnyObject {
     var presenter: AnimalPresenterProtocol! { get set }
-    func updateArrayAnimals(animals: [AnimalEntity]?)
+    func updateArrayAnimals(animals: [AnimalEntity])
 }
 
 
