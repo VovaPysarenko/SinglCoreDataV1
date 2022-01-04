@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class AnimalPresenter {
+class AnimalPresenter: AnimalPresenterConfigurationProtocol {
     
     weak var view: AnimalViewProtocol!
     var interactor: AnimalInteractorInputProtocol!
@@ -14,7 +14,7 @@ class AnimalPresenter {
 }
 
 // MARK: - Extensions
-extension AnimalPresenter : AnimalPresenterProtocol {
+extension AnimalPresenter: AnimalPresenterProtocol {
     
     func viewDidLoad() {
         interactor.getAnimals()

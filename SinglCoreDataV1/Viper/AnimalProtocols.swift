@@ -13,13 +13,17 @@ protocol AnimalTableViewProtocol: AnyObject {
 }
 
 protocol AnimalPresenterProtocol: AnyObject {
-    var view: AnimalViewProtocol! { get set }
-    var interactor: AnimalInteractorInputProtocol! { get set }
-    var router: AnimalRouterProtocol! { get set }
+
     func viewDidLoad()
     func removeAnimal(animal: AnimalEntity)
     func addAnimal(name: String, type: String)
     func editeAnimal(name: String, type: String, id: String)
+}
+
+protocol AnimalPresenterConfigurationProtocol: AnyObject {
+    var view: AnimalViewProtocol! { get set }
+    var interactor: AnimalInteractorInputProtocol! { get set }
+    var router: AnimalRouterProtocol! { get set }
 }
 
 protocol AnimalPresenterOutputProtocol: AnyObject {
@@ -34,9 +38,7 @@ protocol AnimalInteractorInputProtocol: AnyObject {
     func saveAnimal(animal: AnimalEntity)
 }
 
-protocol AnimalRouterProtocol: AnyObject {
-
-}
+protocol AnimalRouterProtocol: AnyObject {}
 
 protocol AnimalViewProtocol: AnyObject {
     var presenter: AnimalPresenterProtocol! { get set }
