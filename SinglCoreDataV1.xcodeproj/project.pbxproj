@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D990C1C2785A04F0091D63B /* RealmProvider.swift */; };
 		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
 		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
 		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		1C103570BB6F193FCCEF55C8 /* Pods_SinglCoreDataV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinglCoreDataV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D990C1C2785A04F0091D63B /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
 		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
 		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				803C6BF6275E34E6003E0761 /* AppDelegate.swift */,
 				8053B133275F9B930072D793 /* CoreData.swift */,
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
+				1D990C1C2785A04F0091D63B /* RealmProvider.swift */,
 				1D2146592779C5BE00A75F69 /* Viper */,
 				805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */,
 				803C6C0E275E479C003E0761 /* AnimalsListViewController.xib */,
@@ -126,7 +129,6 @@
 				AD3E76D363A2581604A91E12 /* Pods-SinglCoreDataV1.debug.xcconfig */,
 				BFF86C4C76D625440CFE35C0 /* Pods-SinglCoreDataV1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -251,6 +253,7 @@
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
 				1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */,
 				1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */,
+				1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,

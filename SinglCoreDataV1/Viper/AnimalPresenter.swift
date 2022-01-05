@@ -22,7 +22,8 @@ extension AnimalPresenter: AnimalPresenterProtocol {
     
     func addAnimal(name: String, type: String) {
         let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-        interactor.saveAnimal(animal: animal)
+        let animalRealm = AnimalEntityMD(id: UUID().uuidString, name: name, type: type, timestamp: Int(Date().currentTimeMillis()))
+        interactor.saveAnimal(animal: animal, animalRealm: animalRealm)
     }
     
     func editeAnimal(name: String, type: String, id: String) {
@@ -30,8 +31,8 @@ extension AnimalPresenter: AnimalPresenterProtocol {
         interactor.editeAnimal(animal: newAnimal)
     }
     
-    func removeAnimal(animal: AnimalEntity) {
-        interactor.removeAnimal(animal: animal)
+    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
+        interactor.removeAnimal(animal: animal, animalRealm: animalRealm)
     }
     
     func getAnimal() {
@@ -42,6 +43,9 @@ extension AnimalPresenter: AnimalPresenterProtocol {
 extension AnimalPresenter: AnimalPresenterOutputProtocol {
     func getSavedAnimals(animals: [AnimalEntity]) {
         self.view.updateArrayAnimals(animals: animals)
+    }
+    func getSavedAnimalsRealm(animals: [AnimalEntityMD]) {
+        self.view.updateArrayAnimalsRealm(animals: animals)
     }
 }
 

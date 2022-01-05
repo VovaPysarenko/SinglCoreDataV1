@@ -10,7 +10,9 @@ import Foundation
 class AnimalInteractor: NSObject {
     weak var presenter: AnimalPresenterOutputProtocol!
     var coreDataProvider = CoreDataProvider()
+    var realmProvider = RealmProvider()
     var animals = [AnimalEntity]()
+    var animalsRealm = [AnimalEntityMD]()
 }
 
 // MARK: - Extensions
@@ -19,11 +21,19 @@ extension AnimalInteractor: AnimalInteractorInputProtocol {
     func getAnimals() {
         self.animals = coreDataProvider.getAnimals()
         self.presenter.getSavedAnimals(animals: self.animals)
+        self.animalsRealm = realmProvider.getObject()
+        self.presenter.getSavedAnimalsRealm(animals: self.animalsRealm)
+//        print("----FASTPRINT---- \(self.animals)")
+//        print("----FASTPRINT--self.animalsRealmself.animalsRealm -- \(self.animalsRealm)")
     }
     
-    func saveAnimal(animal: AnimalEntity) {
+    func saveAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
         self.animals = self.coreDataProvider.saveAnimal(animal: animal)
         self.presenter.getSavedAnimals(animals: animals)
+        self.animalsRealm = self.realmProvider.saveObject(animalRealm)
+        self.presenter.getSavedAnimalsRealm(animals: animalsRealm)
+        print("----FASTPRINT--self.animals-- \(self.animals.count)")
+        print("----FASTPRINT--self.animalsRealmself.animalsRealm -- \(self.animalsRealm.count)")
     }
     
     func editeAnimal(animal: AnimalEntity) {
@@ -36,8 +46,9 @@ extension AnimalInteractor: AnimalInteractorInputProtocol {
         }
     }
     
-    func removeAnimal(animal: AnimalEntity) {
+    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
         self.coreDataProvider.removeAnimal(animal: animal)
+        self.realmProvider.removeObject(animalRealm)
     }
 }
 
