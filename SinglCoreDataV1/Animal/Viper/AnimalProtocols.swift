@@ -8,16 +8,8 @@
 import Foundation
 
 protocol AnimalTableViewProtocol: AnyObject {
-    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD)
-    func editAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD)
-}
-
-protocol AnimalPresenterProtocol: AnyObject {
-
-    func viewDidLoad()
-    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD)
-    func addAnimal(name: String, type: String)
-    func editeAnimal(name: String, type: String, id: String)
+    func removeAnimal(animal: AnimalEntity)
+    func editAnimal(animal: AnimalEntity)
 }
 
 protocol AnimalPresenterConfigurationProtocol: AnyObject {
@@ -26,25 +18,33 @@ protocol AnimalPresenterConfigurationProtocol: AnyObject {
     var router: AnimalRouterProtocol! { get set }
 }
 
+protocol AnimalPresenterProtocol: AnyObject {
+    func viewDidLoad()
+    func goToItemScreen()
+    func removeAnimal(animal: AnimalEntity)
+    func addAnimal(name: String, type: String)
+    func editeAnimal(name: String, type: String, id: String)
+}
+
 protocol AnimalPresenterOutputProtocol: AnyObject {
     func getSavedAnimals(animals: [AnimalEntity])
-    func getSavedAnimalsRealm(animals: [AnimalEntityMD])
 }
 
 protocol AnimalInteractorInputProtocol: AnyObject {
     var presenter: AnimalPresenterOutputProtocol! { get set }
     func getAnimals()
-    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD)
+    func removeAnimal(animal: AnimalEntity)
     func editeAnimal(animal: AnimalEntity)
-    func saveAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD)
+    func saveAnimal(animal: AnimalEntity)
 }
 
-protocol AnimalRouterProtocol: AnyObject {}
+protocol AnimalRouterProtocol: AnyObject {
+    func goToItemScreen(from view: AnimalViewProtocol)
+}
 
 protocol AnimalViewProtocol: AnyObject {
     var presenter: AnimalPresenterProtocol! { get set }
     func updateArrayAnimals(animals: [AnimalEntity])
-    func updateArrayAnimalsRealm(animals: [AnimalEntityMD])
 }
 
 

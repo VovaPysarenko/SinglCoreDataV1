@@ -19,11 +19,13 @@ extension AnimalPresenter: AnimalPresenterProtocol {
     func viewDidLoad() {
         interactor.getAnimals()
     }
+    func goToItemScreen() {
+        router.goToItemScreen(from: view)
+    }
     
     func addAnimal(name: String, type: String) {
         let animal = AnimalEntity(id: UUID().uuidString, name: name, type: type, timestamp: Date().currentTimeMillis())
-        let animalRealm = AnimalEntityMD(id: UUID().uuidString, name: name, type: type, timestamp: Int(Date().currentTimeMillis()))
-        interactor.saveAnimal(animal: animal, animalRealm: animalRealm)
+        interactor.saveAnimal(animal: animal)
     }
     
     func editeAnimal(name: String, type: String, id: String) {
@@ -31,21 +33,18 @@ extension AnimalPresenter: AnimalPresenterProtocol {
         interactor.editeAnimal(animal: newAnimal)
     }
     
-    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
-        interactor.removeAnimal(animal: animal, animalRealm: animalRealm)
+    func removeAnimal(animal: AnimalEntity) {
+        interactor.removeAnimal(animal: animal)
     }
     
-    func getAnimal() {
-        interactor.getAnimals()
-    }
+//    func getAnimal() {
+//        interactor.getAnimals()
+//    }
 }
 
 extension AnimalPresenter: AnimalPresenterOutputProtocol {
     func getSavedAnimals(animals: [AnimalEntity]) {
         self.view.updateArrayAnimals(animals: animals)
-    }
-    func getSavedAnimalsRealm(animals: [AnimalEntityMD]) {
-        self.view.updateArrayAnimalsRealm(animals: animals)
     }
 }
 

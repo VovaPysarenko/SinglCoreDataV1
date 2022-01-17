@@ -38,14 +38,29 @@
                         <action selector="addAnimalPressed:" destination="-1" eventType="touchUpInside" id="hQY-IW-VRh"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaZ-Lr-Qmw">
+                    <rect key="frame" x="287" y="49" width="64" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="fV6-LC-E2j"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Realm"/>
+                    <connections>
+                        <action selector="openPressed:" destination="-1" eventType="touchUpInside" id="89k-J6-yE3"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RRs-vE-pNG" secondAttribute="trailing" id="4B7-Pf-ZCX"/>
                 <constraint firstItem="RRs-vE-pNG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8wh-iU-zWZ"/>
+                <constraint firstItem="qaZ-Lr-Qmw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="9kY-f0-5Xo"/>
                 <constraint firstItem="xua-4U-6ne" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="5" id="L7e-pU-O4s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RRs-vE-pNG" secondAttribute="bottom" id="PCw-ma-Smr"/>
+                <constraint firstItem="qaZ-Lr-Qmw" firstAttribute="leading" secondItem="xua-4U-6ne" secondAttribute="trailing" constant="30" id="e2E-EA-dE7"/>
                 <constraint firstItem="RRs-vE-pNG" firstAttribute="top" secondItem="xua-4U-6ne" secondAttribute="bottom" constant="10" id="k8j-X5-34C"/>
                 <constraint firstItem="xua-4U-6ne" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pqP-JB-R4s"/>
             </constraints>
@@ -53,6 +68,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

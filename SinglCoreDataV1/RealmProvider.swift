@@ -7,47 +7,54 @@
 
 import RealmSwift
 
-let realm = try! Realm()
-
 class RealmProvider {
+    let realm = try! Realm()
     
-    func getObject() -> [AnimalEntityMD] {
-        let animals = realm.objects(AnimalEntityMD.self)
-        let animalItem = animals.compactMap { AnimalEntityMD(id: $0.id, name: $0.name, type: $0.type, timestamp: $0.timestamp) }
-        let sortedAnimal = animalItem.sorted(by: {$0.timestamp > $1.timestamp})
-        return sortedAnimal
+    func getObject() -> [ItemEntity] {
+        let items = realm.objects(ItemEntity.self)
+        let item = items.compactMap { ItemEntity(id: $0.id, name: $0.name, type: $0.type, timestamp: $0.timestamp) }
+        let sortedItem = item.sorted(by: {$0.timestamp > $1.timestamp})
+        return sortedItem
     }
     
-    func saveObject(_ animal: AnimalEntityMD) -> [AnimalEntityMD]  {
+    func saveObject(_ item: ItemEntity) -> [ItemEntity]  {
         try! realm.write {
-            realm.add(animal)
+            realm.add(item)
         }
         return getObject()
     }
     
-    func removeObject(_ animal: AnimalEntityMD) {
-        print("----FASTPRINT--removeObject-- \(animal)")
-        try! realm.write {
-            realm.delete(animal)
-        }
-    }
-    
-    func editObject(_ animal: AnimalEntityMD) {
-        try! realm.write {
-            let animals = realm.objects(AnimalEntityMD.self)
-            for item in animals {
-                if item.id == animal.id {
-                    item.id = animal.id
-                    item.name = animal.name
-                    item.type = animal.type
-                    item.timestamp = animal.timestamp
+    func removeObject(_ item: ItemEntity) {
+        let items = realm.objects(ItemEntity.self)
+        for value in items {
+            if value.id == item.id {
+                try! realm.write {
+                    realm.delete(value)
                 }
+            } else {
+                print("error")
             }
         }
     }
+    
+    func editObject(_ item: ItemEntity) -> [ItemEntity] {
+        let items = realm.objects(ItemEntity.self)
+        try! realm.write {
+            for value in items {
+                if value.id == item.id {
+                    value.id = item.id
+                    value.name = item.name
+                    value.type = item.type
+                    value.timestamp = item.timestamp
+                    self.realm.add(value)
+                }
+            }
+        }
+        return getObject()
+    }
 }
 
-class AnimalEntityMD: Object {
+class ItemEntity: Object {
     @objc dynamic var id: String?
     @objc dynamic var name: String?
     @objc dynamic var type: String?

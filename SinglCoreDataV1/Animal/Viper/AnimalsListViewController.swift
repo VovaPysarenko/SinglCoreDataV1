@@ -43,16 +43,20 @@ class AnimalsListViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func openPressed(_ sender: Any) {
+        presenter.goToItemScreen()
+    }
 }
 
 // MARK: - Extensions
 extension AnimalsListViewController: AnimalTableViewProtocol {
     
-    func removeAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
-        self.presenter.removeAnimal(animal: animal, animalRealm: animalRealm)
+    func removeAnimal(animal: AnimalEntity) {
+        self.presenter.removeAnimal(animal: animal)
     }
 
-    func editAnimal(animal: AnimalEntity, animalRealm: AnimalEntityMD) {
+    func editAnimal(animal: AnimalEntity) {
         let alertController = UIAlertController(title: "Animal", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = animal.name
@@ -77,10 +81,6 @@ extension AnimalsListViewController: AnimalTableViewProtocol {
 }
 
 extension AnimalsListViewController: AnimalViewProtocol {
-    func updateArrayAnimalsRealm(animals: [AnimalEntityMD]) {
-        self.animalTableView.animalsRealm = animals
-        self.animalTableView.reloadData()
-    }
     
     func updateArrayAnimals(animals: [AnimalEntity]) {
         self.animalTableView.animals = animals

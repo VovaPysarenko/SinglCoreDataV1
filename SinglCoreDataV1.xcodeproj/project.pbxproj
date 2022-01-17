@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D990C1C2785A04F0091D63B /* RealmProvider.swift */; };
+		1DA3182A2785C8AF00B1B1A3 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318282785C8AF00B1B1A3 /* ItemViewController.swift */; };
+		1DA3182B2785C8AF00B1B1A3 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA318292785C8AF00B1B1A3 /* ItemViewController.xib */; };
+		1DA3182D2785CF0400B1B1A3 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3182C2785CF0400B1B1A3 /* ItemTableView.swift */; };
+		1DA318302785CF6F00B1B1A3 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3182E2785CF6F00B1B1A3 /* ItemTableViewCell.swift */; };
+		1DA318312785CF6F00B1B1A3 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA3182F2785CF6F00B1B1A3 /* ItemTableViewCell.xib */; };
+		1DA318332785D10000B1B1A3 /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318322785D10000B1B1A3 /* ItemPresenter.swift */; };
+		1DA318352785D12400B1B1A3 /* ItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318342785D12400B1B1A3 /* ItemInteractor.swift */; };
+		1DA318372785D13D00B1B1A3 /* ItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318362785D13D00B1B1A3 /* ItemRouter.swift */; };
+		1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318382785D15700B1B1A3 /* ItemConfigurator.swift */; };
+		1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */; };
 		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
 		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
 		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
@@ -30,6 +40,16 @@
 /* Begin PBXFileReference section */
 		1C103570BB6F193FCCEF55C8 /* Pods_SinglCoreDataV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinglCoreDataV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D990C1C2785A04F0091D63B /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		1DA318282785C8AF00B1B1A3 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		1DA318292785C8AF00B1B1A3 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
+		1DA3182C2785CF0400B1B1A3 /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
+		1DA3182E2785CF6F00B1B1A3 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		1DA3182F2785CF6F00B1B1A3 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		1DA318322785D10000B1B1A3 /* ItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
+		1DA318342785D12400B1B1A3 /* ItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInteractor.swift; sourceTree = "<group>"; };
+		1DA318362785D13D00B1B1A3 /* ItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRouter.swift; sourceTree = "<group>"; };
+		1DA318382785D15700B1B1A3 /* ItemConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemConfigurator.swift; sourceTree = "<group>"; };
+		1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocols.swift; sourceTree = "<group>"; };
 		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
 		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
 		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
@@ -77,6 +97,43 @@
 			path = Viper;
 			sourceTree = "<group>";
 		};
+		1DA318262785C60800B1B1A3 /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				1D2146592779C5BE00A75F69 /* Viper */,
+				805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */,
+				803C6C0E275E479C003E0761 /* AnimalsListViewController.xib */,
+				803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */,
+				803C6C12275E49CC003E0761 /* AnimalTableViewCell.xib */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
+		1DA318272785C87E00B1B1A3 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				1DA3183C2785D19700B1B1A3 /* Viper */,
+				1DA318292785C8AF00B1B1A3 /* ItemViewController.xib */,
+				1DA3182C2785CF0400B1B1A3 /* ItemTableView.swift */,
+				1DA3182E2785CF6F00B1B1A3 /* ItemTableViewCell.swift */,
+				1DA3182F2785CF6F00B1B1A3 /* ItemTableViewCell.xib */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		1DA3183C2785D19700B1B1A3 /* Viper */ = {
+			isa = PBXGroup;
+			children = (
+				1DA318282785C8AF00B1B1A3 /* ItemViewController.swift */,
+				1DA318322785D10000B1B1A3 /* ItemPresenter.swift */,
+				1DA318342785D12400B1B1A3 /* ItemInteractor.swift */,
+				1DA318362785D13D00B1B1A3 /* ItemRouter.swift */,
+				1DA318382785D15700B1B1A3 /* ItemConfigurator.swift */,
+				1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */,
+			);
+			path = Viper;
+			sourceTree = "<group>";
+		};
 		2329989AE2FF5627A9DFE4F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,11 +167,8 @@
 				8053B133275F9B930072D793 /* CoreData.swift */,
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
 				1D990C1C2785A04F0091D63B /* RealmProvider.swift */,
-				1D2146592779C5BE00A75F69 /* Viper */,
-				805C14B0276A1E0C00C03737 /* AnimalsTableView.swift */,
-				803C6C0E275E479C003E0761 /* AnimalsListViewController.xib */,
-				803C6C11275E49CC003E0761 /* AnimalTableViewCell.swift */,
-				803C6C12275E49CC003E0761 /* AnimalTableViewCell.xib */,
+				1DA318272785C87E00B1B1A3 /* Item */,
+				1DA318262785C60800B1B1A3 /* Animal */,
 				803C6C02275E34E8003E0761 /* Assets.xcassets */,
 				803C6C04275E34E8003E0761 /* LaunchScreen.storyboard */,
 				803C6C07275E34E8003E0761 /* Info.plist */,
@@ -194,7 +248,9 @@
 			files = (
 				803C6C06275E34E8003E0761 /* LaunchScreen.storyboard in Resources */,
 				803C6C14275E49CC003E0761 /* AnimalTableViewCell.xib in Resources */,
+				1DA3182B2785C8AF00B1B1A3 /* ItemViewController.xib in Resources */,
 				803C6C10275E479C003E0761 /* AnimalsListViewController.xib in Resources */,
+				1DA318312785CF6F00B1B1A3 /* ItemTableViewCell.xib in Resources */,
 				803C6C03275E34E8003E0761 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,15 +305,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */,
+				1DA3182D2785CF0400B1B1A3 /* ItemTableView.swift in Sources */,
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
+				1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
+				1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */,
+				1DA318302785CF6F00B1B1A3 /* ItemTableViewCell.swift in Sources */,
 				1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */,
 				1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */,
 				1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */,
+				1DA318372785D13D00B1B1A3 /* ItemRouter.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
+				1DA318352785D12400B1B1A3 /* ItemInteractor.swift in Sources */,
+				1DA3182A2785C8AF00B1B1A3 /* ItemViewController.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
 				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
+				1DA318332785D10000B1B1A3 /* ItemPresenter.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
 				1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */,
 				1DF9890B2773679200C93BB6 /* AnimalProtocols.swift in Sources */,

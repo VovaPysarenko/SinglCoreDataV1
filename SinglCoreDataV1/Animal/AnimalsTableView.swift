@@ -10,7 +10,6 @@ import UIKit
 class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     var animals = [AnimalEntity]()
-    var animalsRealm = [AnimalEntityMD]()
     weak var animalProtocol: AnimalTableViewProtocol?
     
     func timestampToDate(timestamp: Int64) -> String {
@@ -23,16 +22,13 @@ class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return animals.count
-        return animalsRealm.count
+        return animals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as? AnimalTableViewCell {
-//            let animal = animals[indexPath.row]
-//            let time = timestampToDate(timestamp: animal.timestamp!)
-            let animal = animalsRealm[indexPath.row]
-            let time = timestampToDate(timestamp: Int64(animal.timestamp))
+            let animal = animals[indexPath.row]
+            let time = timestampToDate(timestamp: animal.timestamp!)
             cell.nameLabel.text = animal.name
             cell.typeLabel.text = animal.type
             cell.dateLabel.text = time
@@ -48,20 +44,16 @@ class AnimalsTableView: UITableView, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let animal = animals[indexPath.row]
-        let animalRealm = animalsRealm[indexPath.row]
         if editingStyle == .delete {
-            self.animalProtocol?.removeAnimal(animal: animal, animalRealm: animalRealm)
+            self.animalProtocol?.removeAnimal(animal: animal)
             animals.remove(at: indexPath.item)
-            animalsRealm.remove(at: indexPath.item)
-            print("----FASTPRINT--indexPath.item-- \(indexPath.item)")
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let animal = animals[indexPath.row]
-        let animalRealm = animalsRealm[indexPath.row]
-        self.animalProtocol?.editAnimal(animal: animal, animalRealm: animalRealm)
+        self.animalProtocol?.editAnimal(animal: animal)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
