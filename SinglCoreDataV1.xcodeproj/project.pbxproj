@@ -18,6 +18,8 @@
 		1DA318372785D13D00B1B1A3 /* ItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318362785D13D00B1B1A3 /* ItemRouter.swift */; };
 		1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318382785D15700B1B1A3 /* ItemConfigurator.swift */; };
 		1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */; };
+		1DA85E1E2796E18000870EB1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E1C2796E18000870EB1 /* StartViewController.swift */; };
+		1DA85E1F2796E18000870EB1 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E1D2796E18000870EB1 /* StartViewController.xib */; };
 		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
 		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
 		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
@@ -50,6 +52,8 @@
 		1DA318362785D13D00B1B1A3 /* ItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRouter.swift; sourceTree = "<group>"; };
 		1DA318382785D15700B1B1A3 /* ItemConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemConfigurator.swift; sourceTree = "<group>"; };
 		1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocols.swift; sourceTree = "<group>"; };
+		1DA85E1C2796E18000870EB1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		1DA85E1D2796E18000870EB1 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
 		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
 		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
@@ -134,6 +138,15 @@
 			path = Viper;
 			sourceTree = "<group>";
 		};
+		1DA85E202796E18E00870EB1 /* StartVC */ = {
+			isa = PBXGroup;
+			children = (
+				1DA85E1C2796E18000870EB1 /* StartViewController.swift */,
+				1DA85E1D2796E18000870EB1 /* StartViewController.xib */,
+			);
+			path = StartVC;
+			sourceTree = "<group>";
+		};
 		2329989AE2FF5627A9DFE4F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +180,7 @@
 				8053B133275F9B930072D793 /* CoreData.swift */,
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
 				1D990C1C2785A04F0091D63B /* RealmProvider.swift */,
+				1DA85E202796E18E00870EB1 /* StartVC */,
 				1DA318272785C87E00B1B1A3 /* Item */,
 				1DA318262785C60800B1B1A3 /* Animal */,
 				803C6C02275E34E8003E0761 /* Assets.xcassets */,
@@ -247,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				803C6C06275E34E8003E0761 /* LaunchScreen.storyboard in Resources */,
+				1DA85E1F2796E18000870EB1 /* StartViewController.xib in Resources */,
 				803C6C14275E49CC003E0761 /* AnimalTableViewCell.xib in Resources */,
 				1DA3182B2785C8AF00B1B1A3 /* ItemViewController.xib in Resources */,
 				803C6C10275E479C003E0761 /* AnimalsListViewController.xib in Resources */,
@@ -309,6 +324,7 @@
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
 				1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
+				1DA85E1E2796E18000870EB1 /* StartViewController.swift in Sources */,
 				1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */,
 				1DA318302785CF6F00B1B1A3 /* ItemTableViewCell.swift in Sources */,
 				1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */,

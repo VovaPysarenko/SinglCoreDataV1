@@ -36,10 +36,7 @@ extension AnimalPresenter: AnimalPresenterProtocol {
     func removeAnimal(animal: AnimalEntity) {
         interactor.removeAnimal(animal: animal)
     }
-    
-//    func getAnimal() {
-//        interactor.getAnimals()
-//    }
+
 }
 
 extension AnimalPresenter: AnimalPresenterOutputProtocol {
