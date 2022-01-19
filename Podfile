@@ -5,5 +5,6 @@ use_frameworks!
 target 'SinglCoreDataV1' do
   
   pod 'RealmSwift'
+  pod 'Firebase/Firestore'
 
 end

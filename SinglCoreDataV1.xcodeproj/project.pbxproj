@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D990C1C2785A04F0091D63B /* RealmProvider.swift */; };
+		1DA1B528279826B000BE257E /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1B526279826B000BE257E /* AddCityViewController.swift */; };
+		1DA1B529279826B000BE257E /* AddCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1B527279826B000BE257E /* AddCityViewController.xib */; };
 		1DA3182A2785C8AF00B1B1A3 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA318282785C8AF00B1B1A3 /* ItemViewController.swift */; };
 		1DA3182B2785C8AF00B1B1A3 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA318292785C8AF00B1B1A3 /* ItemViewController.xib */; };
 		1DA3182D2785CF0400B1B1A3 /* ItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3182C2785CF0400B1B1A3 /* ItemTableView.swift */; };
@@ -20,6 +22,13 @@
 		1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */; };
 		1DA85E1E2796E18000870EB1 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E1C2796E18000870EB1 /* StartViewController.swift */; };
 		1DA85E1F2796E18000870EB1 /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E1D2796E18000870EB1 /* StartViewController.xib */; };
+		1DA85E23279811D900870EB1 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E21279811D900870EB1 /* CityViewController.swift */; };
+		1DA85E24279811D900870EB1 /* CityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E22279811D900870EB1 /* CityViewController.xib */; };
+		1DA85E272798141100870EB1 /* CityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E262798141100870EB1 /* CityTableView.swift */; };
+		1DA85E2A2798143E00870EB1 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E282798143E00870EB1 /* CityTableViewCell.swift */; };
+		1DA85E2B2798143E00870EB1 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E292798143E00870EB1 /* CityTableViewCell.xib */; };
+		1DA85E2D2798176E00870EB1 /* FBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E2C2798176E00870EB1 /* FBProvider.swift */; };
+		1DA85E2F279818FC00870EB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E2E279818FC00870EB1 /* GoogleService-Info.plist */; };
 		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
 		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
 		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
@@ -42,6 +51,8 @@
 /* Begin PBXFileReference section */
 		1C103570BB6F193FCCEF55C8 /* Pods_SinglCoreDataV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinglCoreDataV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D990C1C2785A04F0091D63B /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		1DA1B526279826B000BE257E /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		1DA1B527279826B000BE257E /* AddCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCityViewController.xib; sourceTree = "<group>"; };
 		1DA318282785C8AF00B1B1A3 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		1DA318292785C8AF00B1B1A3 /* ItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
 		1DA3182C2785CF0400B1B1A3 /* ItemTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableView.swift; sourceTree = "<group>"; };
@@ -54,6 +65,13 @@
 		1DA3183A2785D17100B1B1A3 /* ItemProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocols.swift; sourceTree = "<group>"; };
 		1DA85E1C2796E18000870EB1 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1DA85E1D2796E18000870EB1 /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		1DA85E21279811D900870EB1 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		1DA85E22279811D900870EB1 /* CityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityViewController.xib; sourceTree = "<group>"; };
+		1DA85E262798141100870EB1 /* CityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableView.swift; sourceTree = "<group>"; };
+		1DA85E282798143E00870EB1 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		1DA85E292798143E00870EB1 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		1DA85E2C2798176E00870EB1 /* FBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBProvider.swift; sourceTree = "<group>"; };
+		1DA85E2E279818FC00870EB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
 		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
 		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
@@ -147,6 +165,20 @@
 			path = StartVC;
 			sourceTree = "<group>";
 		};
+		1DA85E25279811E200870EB1 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				1DA85E21279811D900870EB1 /* CityViewController.swift */,
+				1DA85E22279811D900870EB1 /* CityViewController.xib */,
+				1DA85E262798141100870EB1 /* CityTableView.swift */,
+				1DA85E282798143E00870EB1 /* CityTableViewCell.swift */,
+				1DA85E292798143E00870EB1 /* CityTableViewCell.xib */,
+				1DA1B526279826B000BE257E /* AddCityViewController.swift */,
+				1DA1B527279826B000BE257E /* AddCityViewController.xib */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
 		2329989AE2FF5627A9DFE4F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,11 +212,14 @@
 				8053B133275F9B930072D793 /* CoreData.swift */,
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
 				1D990C1C2785A04F0091D63B /* RealmProvider.swift */,
+				1DA85E2C2798176E00870EB1 /* FBProvider.swift */,
 				1DA85E202796E18E00870EB1 /* StartVC */,
 				1DA318272785C87E00B1B1A3 /* Item */,
 				1DA318262785C60800B1B1A3 /* Animal */,
+				1DA85E25279811E200870EB1 /* City */,
 				803C6C02275E34E8003E0761 /* Assets.xcassets */,
 				803C6C04275E34E8003E0761 /* LaunchScreen.storyboard */,
+				1DA85E2E279818FC00870EB1 /* GoogleService-Info.plist */,
 				803C6C07275E34E8003E0761 /* Info.plist */,
 				803C6BFF275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld */,
 			);
@@ -267,6 +302,10 @@
 				803C6C10275E479C003E0761 /* AnimalsListViewController.xib in Resources */,
 				1DA318312785CF6F00B1B1A3 /* ItemTableViewCell.xib in Resources */,
 				803C6C03275E34E8003E0761 /* Assets.xcassets in Resources */,
+				1DA85E2F279818FC00870EB1 /* GoogleService-Info.plist in Resources */,
+				1DA1B529279826B000BE257E /* AddCityViewController.xib in Resources */,
+				1DA85E2B2798143E00870EB1 /* CityTableViewCell.xib in Resources */,
+				1DA85E24279811D900870EB1 /* CityViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +360,8 @@
 			files = (
 				1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */,
 				1DA3182D2785CF0400B1B1A3 /* ItemTableView.swift in Sources */,
+				1DA85E2D2798176E00870EB1 /* FBProvider.swift in Sources */,
+				1DA85E2A2798143E00870EB1 /* CityTableViewCell.swift in Sources */,
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
 				1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
@@ -333,10 +374,13 @@
 				1DA318372785D13D00B1B1A3 /* ItemRouter.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				1DA318352785D12400B1B1A3 /* ItemInteractor.swift in Sources */,
+				1DA1B528279826B000BE257E /* AddCityViewController.swift in Sources */,
 				1DA3182A2785C8AF00B1B1A3 /* ItemViewController.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
 				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
+				1DA85E272798141100870EB1 /* CityTableView.swift in Sources */,
+				1DA85E23279811D900870EB1 /* CityViewController.swift in Sources */,
 				1DA318332785D10000B1B1A3 /* ItemPresenter.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
 				1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */,

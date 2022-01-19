@@ -21,4 +21,9 @@ class StartViewController: UIViewController {
     @IBAction func realmPressed(_ sender: Any) {
         navigationController?.pushViewController(ItemConfigurator.create(), animated: true)
     }
+    
+    @IBAction func fireBasePressed(_ sender: Any) {
+        navigationController?.pushViewController(CityViewController(), animated: true)
+    }
+    
 }
