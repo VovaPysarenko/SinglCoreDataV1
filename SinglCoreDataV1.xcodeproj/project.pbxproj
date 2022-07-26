@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D41582A288E7FD100D65E8D /* MainSideBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D415828288E7FD100D65E8D /* MainSideBarVC.swift */; };
+		1D41582B288E7FD100D65E8D /* MainSideBarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D415829288E7FD100D65E8D /* MainSideBarVC.xib */; };
+		1D415830288E92A200D65E8D /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41582E288E92A200D65E8D /* LeftMenuTableViewCell.swift */; };
+		1D415831288E92A200D65E8D /* LeftMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D41582F288E92A200D65E8D /* LeftMenuTableViewCell.xib */; };
+		1D415833288EA19300D65E8D /* LeftMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D415832288EA19300D65E8D /* LeftMenuTableView.swift */; };
+		1D415835288FFB3F00D65E8D /* SelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D415834288FFB3F00D65E8D /* SelectTableView.swift */; };
+		1D9116F327A41CB70091C46C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116F227A41CB70091C46C /* NetworkProvider.swift */; };
+		1D9116F627A429760091C46C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116F527A429760091C46C /* Response.swift */; };
+		1D9116F827A429B00091C46C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116F727A429B00091C46C /* Request.swift */; };
+		1D9116FA27AA8DF30091C46C /* CommandRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116F927AA8DF30091C46C /* CommandRequest.swift */; };
+		1D9116FC27AA8E520091C46C /* CommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116FB27AA8E520091C46C /* CommandResponse.swift */; };
+		1D9116FE27AA8EDA0091C46C /* CommandUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116FD27AA8ED90091C46C /* CommandUtils.swift */; };
+		1D91170027AA8EFC0091C46C /* StartSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9116FF27AA8EFC0091C46C /* StartSessionRequest.swift */; };
+		1D91170227AA8F190091C46C /* StartSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D91170127AA8F190091C46C /* StartSessionResponse.swift */; };
 		1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D990C1C2785A04F0091D63B /* RealmProvider.swift */; };
 		1DA1B528279826B000BE257E /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1B526279826B000BE257E /* AddCityViewController.swift */; };
 		1DA1B529279826B000BE257E /* AddCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA1B527279826B000BE257E /* AddCityViewController.xib */; };
@@ -29,6 +43,9 @@
 		1DA85E2B2798143E00870EB1 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E292798143E00870EB1 /* CityTableViewCell.xib */; };
 		1DA85E2D2798176E00870EB1 /* FBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85E2C2798176E00870EB1 /* FBProvider.swift */; };
 		1DA85E2F279818FC00870EB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DA85E2E279818FC00870EB1 /* GoogleService-Info.plist */; };
+		1DAE7A6E27FF01650064A2EE /* DropDounViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAE7A6C27FF01650064A2EE /* DropDounViewController.swift */; };
+		1DAE7A6F27FF01650064A2EE /* DropDounViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DAE7A6D27FF01650064A2EE /* DropDounViewController.xib */; };
+		1DD3DB7B27999203006CC142 /* SpeaechProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3DB7A27999203006CC142 /* SpeaechProvider.swift */; };
 		1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989022773671900C93BB6 /* AnimalPresenter.swift */; };
 		1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989042773673A00C93BB6 /* AnimalInteractor.swift */; };
 		1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF989062773675300C93BB6 /* AnimalRouter.swift */; };
@@ -50,6 +67,20 @@
 
 /* Begin PBXFileReference section */
 		1C103570BB6F193FCCEF55C8 /* Pods_SinglCoreDataV1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinglCoreDataV1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D415828288E7FD100D65E8D /* MainSideBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSideBarVC.swift; sourceTree = "<group>"; };
+		1D415829288E7FD100D65E8D /* MainSideBarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSideBarVC.xib; sourceTree = "<group>"; };
+		1D41582E288E92A200D65E8D /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
+		1D41582F288E92A200D65E8D /* LeftMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuTableViewCell.xib; sourceTree = "<group>"; };
+		1D415832288EA19300D65E8D /* LeftMenuTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableView.swift; sourceTree = "<group>"; };
+		1D415834288FFB3F00D65E8D /* SelectTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTableView.swift; sourceTree = "<group>"; };
+		1D9116F227A41CB70091C46C /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		1D9116F527A429760091C46C /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		1D9116F727A429B00091C46C /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1D9116F927AA8DF30091C46C /* CommandRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandRequest.swift; sourceTree = "<group>"; };
+		1D9116FB27AA8E520091C46C /* CommandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandResponse.swift; sourceTree = "<group>"; };
+		1D9116FD27AA8ED90091C46C /* CommandUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandUtils.swift; sourceTree = "<group>"; };
+		1D9116FF27AA8EFC0091C46C /* StartSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSessionRequest.swift; sourceTree = "<group>"; };
+		1D91170127AA8F190091C46C /* StartSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartSessionResponse.swift; sourceTree = "<group>"; };
 		1D990C1C2785A04F0091D63B /* RealmProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
 		1DA1B526279826B000BE257E /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		1DA1B527279826B000BE257E /* AddCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCityViewController.xib; sourceTree = "<group>"; };
@@ -72,6 +103,9 @@
 		1DA85E292798143E00870EB1 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		1DA85E2C2798176E00870EB1 /* FBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBProvider.swift; sourceTree = "<group>"; };
 		1DA85E2E279818FC00870EB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DAE7A6C27FF01650064A2EE /* DropDounViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDounViewController.swift; sourceTree = "<group>"; };
+		1DAE7A6D27FF01650064A2EE /* DropDounViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDounViewController.xib; sourceTree = "<group>"; };
+		1DD3DB7A27999203006CC142 /* SpeaechProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeaechProvider.swift; sourceTree = "<group>"; };
 		1DF989022773671900C93BB6 /* AnimalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPresenter.swift; sourceTree = "<group>"; };
 		1DF989042773673A00C93BB6 /* AnimalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalInteractor.swift; sourceTree = "<group>"; };
 		1DF989062773675300C93BB6 /* AnimalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalRouter.swift; sourceTree = "<group>"; };
@@ -119,6 +153,34 @@
 			path = Viper;
 			sourceTree = "<group>";
 		};
+		1D415822288E7F5A00D65E8D /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				1D415828288E7FD100D65E8D /* MainSideBarVC.swift */,
+				1D415829288E7FD100D65E8D /* MainSideBarVC.xib */,
+				1D415832288EA19300D65E8D /* LeftMenuTableView.swift */,
+				1D41582E288E92A200D65E8D /* LeftMenuTableViewCell.swift */,
+				1D41582F288E92A200D65E8D /* LeftMenuTableViewCell.xib */,
+				1D415834288FFB3F00D65E8D /* SelectTableView.swift */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
+		1D9116F427A429220091C46C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1D9116F227A41CB70091C46C /* NetworkProvider.swift */,
+				1D9116F727A429B00091C46C /* Request.swift */,
+				1D9116F527A429760091C46C /* Response.swift */,
+				1D9116F927AA8DF30091C46C /* CommandRequest.swift */,
+				1D9116FB27AA8E520091C46C /* CommandResponse.swift */,
+				1D9116FD27AA8ED90091C46C /* CommandUtils.swift */,
+				1D9116FF27AA8EFC0091C46C /* StartSessionRequest.swift */,
+				1D91170127AA8F190091C46C /* StartSessionResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1DA318262785C60800B1B1A3 /* Animal */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +223,8 @@
 			children = (
 				1DA85E1C2796E18000870EB1 /* StartViewController.swift */,
 				1DA85E1D2796E18000870EB1 /* StartViewController.xib */,
+				1DAE7A6C27FF01650064A2EE /* DropDounViewController.swift */,
+				1DAE7A6D27FF01650064A2EE /* DropDounViewController.xib */,
 			);
 			path = StartVC;
 			sourceTree = "<group>";
@@ -213,7 +277,10 @@
 				8053B13527623D9D0072D793 /* CoreDataProvider.swift */,
 				1D990C1C2785A04F0091D63B /* RealmProvider.swift */,
 				1DA85E2C2798176E00870EB1 /* FBProvider.swift */,
+				1DD3DB7A27999203006CC142 /* SpeaechProvider.swift */,
+				1D9116F427A429220091C46C /* Network */,
 				1DA85E202796E18E00870EB1 /* StartVC */,
+				1D415822288E7F5A00D65E8D /* SideBar */,
 				1DA318272785C87E00B1B1A3 /* Item */,
 				1DA318262785C60800B1B1A3 /* Animal */,
 				1DA85E25279811E200870EB1 /* City */,
@@ -296,10 +363,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				803C6C06275E34E8003E0761 /* LaunchScreen.storyboard in Resources */,
+				1D415831288E92A200D65E8D /* LeftMenuTableViewCell.xib in Resources */,
+				1D41582B288E7FD100D65E8D /* MainSideBarVC.xib in Resources */,
 				1DA85E1F2796E18000870EB1 /* StartViewController.xib in Resources */,
 				803C6C14275E49CC003E0761 /* AnimalTableViewCell.xib in Resources */,
 				1DA3182B2785C8AF00B1B1A3 /* ItemViewController.xib in Resources */,
 				803C6C10275E479C003E0761 /* AnimalsListViewController.xib in Resources */,
+				1DAE7A6F27FF01650064A2EE /* DropDounViewController.xib in Resources */,
 				1DA318312785CF6F00B1B1A3 /* ItemTableViewCell.xib in Resources */,
 				803C6C03275E34E8003E0761 /* Assets.xcassets in Resources */,
 				1DA85E2F279818FC00870EB1 /* GoogleService-Info.plist in Resources */,
@@ -360,28 +430,42 @@
 			files = (
 				1DF989072773675300C93BB6 /* AnimalRouter.swift in Sources */,
 				1DA3182D2785CF0400B1B1A3 /* ItemTableView.swift in Sources */,
+				1D9116FC27AA8E520091C46C /* CommandResponse.swift in Sources */,
+				1D9116F327A41CB70091C46C /* NetworkProvider.swift in Sources */,
 				1DA85E2D2798176E00870EB1 /* FBProvider.swift in Sources */,
+				1D91170027AA8EFC0091C46C /* StartSessionRequest.swift in Sources */,
+				1DAE7A6E27FF01650064A2EE /* DropDounViewController.swift in Sources */,
+				1D9116F627A429760091C46C /* Response.swift in Sources */,
 				1DA85E2A2798143E00870EB1 /* CityTableViewCell.swift in Sources */,
+				1D9116F827A429B00091C46C /* Request.swift in Sources */,
 				803C6BF7275E34E6003E0761 /* AppDelegate.swift in Sources */,
 				1DA318392785D15700B1B1A3 /* ItemConfigurator.swift in Sources */,
 				805C14B1276A1E0C00C03737 /* AnimalsTableView.swift in Sources */,
 				1DA85E1E2796E18000870EB1 /* StartViewController.swift in Sources */,
 				1DA3183B2785D17100B1B1A3 /* ItemProtocols.swift in Sources */,
+				1D91170227AA8F190091C46C /* StartSessionResponse.swift in Sources */,
 				1DA318302785CF6F00B1B1A3 /* ItemTableViewCell.swift in Sources */,
+				1D415830288E92A200D65E8D /* LeftMenuTableViewCell.swift in Sources */,
 				1DF989092773677E00C93BB6 /* AnimalConfigurator.swift in Sources */,
 				1DF989032773671900C93BB6 /* AnimalPresenter.swift in Sources */,
 				1D990C1D2785A04F0091D63B /* RealmProvider.swift in Sources */,
+				1D415833288EA19300D65E8D /* LeftMenuTableView.swift in Sources */,
 				1DA318372785D13D00B1B1A3 /* ItemRouter.swift in Sources */,
 				803C6C13275E49CC003E0761 /* AnimalTableViewCell.swift in Sources */,
 				1DA318352785D12400B1B1A3 /* ItemInteractor.swift in Sources */,
 				1DA1B528279826B000BE257E /* AddCityViewController.swift in Sources */,
+				1D41582A288E7FD100D65E8D /* MainSideBarVC.swift in Sources */,
 				1DA3182A2785C8AF00B1B1A3 /* ItemViewController.swift in Sources */,
 				803C6C0F275E479C003E0761 /* AnimalsListViewController.swift in Sources */,
 				803C6C01275E34E6003E0761 /* SinglCoreDataV1.xcdatamodeld in Sources */,
+				1D9116FA27AA8DF30091C46C /* CommandRequest.swift in Sources */,
 				8053B13627623D9E0072D793 /* CoreDataProvider.swift in Sources */,
+				1D415835288FFB3F00D65E8D /* SelectTableView.swift in Sources */,
 				1DA85E272798141100870EB1 /* CityTableView.swift in Sources */,
+				1D9116FE27AA8EDA0091C46C /* CommandUtils.swift in Sources */,
 				1DA85E23279811D900870EB1 /* CityViewController.swift in Sources */,
 				1DA318332785D10000B1B1A3 /* ItemPresenter.swift in Sources */,
+				1DD3DB7B27999203006CC142 /* SpeaechProvider.swift in Sources */,
 				8053B134275F9B930072D793 /* CoreData.swift in Sources */,
 				1DF989052773673A00C93BB6 /* AnimalInteractor.swift in Sources */,
 				1DF9890B2773679200C93BB6 /* AnimalProtocols.swift in Sources */,
@@ -529,10 +613,15 @@
 				DEVELOPMENT_TEAM = 7QWPMKUD6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SinglCoreDataV1/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Media is required to use this application";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to use this application";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is required to use this application";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is required to use this application";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -557,10 +646,15 @@
 				DEVELOPMENT_TEAM = 7QWPMKUD6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SinglCoreDataV1/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Media is required to use this application";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to use this application";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Bluetooth is required to use this application";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is required to use this application";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

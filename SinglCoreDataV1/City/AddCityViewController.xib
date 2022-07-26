@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddCityViewController" customModule="SinglCoreDataV1" customModuleProvider="target">
             <connections>
+                <outlet property="cityTextField" destination="J0C-Mx-csL" id="RV3-TT-Gr9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="City" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0C-Mx-csL">
-                    <rect key="frame" x="107" y="144" width="200" height="50"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0C-Mx-csL">
+                    <rect key="frame" x="107" y="194" width="200" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="495-0A-en8"/>
                         <constraint firstAttribute="height" constant="50" id="XBs-fp-6ff"/>
@@ -29,11 +30,11 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5z-eF-mEw">
-                    <rect key="frame" x="47" y="224" width="320" height="216"/>
+                    <rect key="frame" x="47" y="274" width="320" height="216"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOf-SE-alq">
-                    <rect key="frame" x="157" y="475" width="100" height="40"/>
+                    <rect key="frame" x="294" y="54" width="100" height="40"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="CDT-1T-BN9"/>
@@ -42,17 +43,20 @@
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="SAVE"/>
+                    <connections>
+                        <action selector="savePressed:" destination="-1" eventType="touchUpInside" id="c1U-Zb-fgF"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemIndigoColor"/>
             <constraints>
                 <constraint firstItem="J0C-Mx-csL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3Zf-aT-q2y"/>
-                <constraint firstItem="J0C-Mx-csL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="B5D-e4-1jm"/>
-                <constraint firstItem="eOf-SE-alq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="D5M-BX-plY"/>
+                <constraint firstItem="J0C-Mx-csL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="B5D-e4-1jm"/>
                 <constraint firstItem="l5z-eF-mEw" firstAttribute="top" secondItem="J0C-Mx-csL" secondAttribute="bottom" constant="30" id="Ew5-8V-W84"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eOf-SE-alq" secondAttribute="trailing" constant="20" id="gbW-Rw-48B"/>
+                <constraint firstItem="eOf-SE-alq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="k1w-qC-utQ"/>
                 <constraint firstItem="l5z-eF-mEw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="naY-to-gMe"/>
-                <constraint firstItem="eOf-SE-alq" firstAttribute="top" secondItem="l5z-eF-mEw" secondAttribute="bottom" constant="35" id="tDo-iA-98z"/>
             </constraints>
             <point key="canvasLocation" x="132" y="131"/>
         </view>

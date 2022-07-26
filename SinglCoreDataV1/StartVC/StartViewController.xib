@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="SinglCoreDataV1" customModuleProvider="target">
             <connections>
+                <outlet property="pickerBizCat" destination="vYj-Eg-6lE" id="hgb-JX-Pbv"/>
+                <outlet property="textfieldBizCat" destination="UQp-vE-ZK7" id="dlD-VN-snH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -64,15 +66,31 @@
                                 <action selector="fireBasePressed:" destination="-1" eventType="touchUpInside" id="iV7-uh-PwS"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-vE-ZK7">
+                            <rect key="frame" x="51" y="87" width="312" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="312" id="sN3-4f-v3a"/>
+                                <constraint firstAttribute="height" constant="40" id="wVy-RV-SsT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYj-Eg-6lE">
+                            <rect key="frame" x="47" y="-1" width="320" height="216"/>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                     <constraints>
                         <constraint firstItem="P6Z-DN-FeR" firstAttribute="top" secondItem="yip-mZ-IbZ" secondAttribute="bottom" constant="10" id="3uj-aB-yL9"/>
+                        <constraint firstItem="UQp-vE-ZK7" firstAttribute="centerX" secondItem="jOs-Zu-yiM" secondAttribute="centerX" id="69A-PY-QWk"/>
+                        <constraint firstItem="vYj-Eg-6lE" firstAttribute="centerY" secondItem="UQp-vE-ZK7" secondAttribute="centerY" id="BvA-FG-Z5P"/>
                         <constraint firstItem="P6Z-DN-FeR" firstAttribute="centerX" secondItem="jOs-Zu-yiM" secondAttribute="centerX" id="MKg-DR-rOx"/>
                         <constraint firstItem="yip-mZ-IbZ" firstAttribute="centerX" secondItem="jOs-Zu-yiM" secondAttribute="centerX" id="UjP-ea-N9L"/>
                         <constraint firstItem="Otn-8A-XEJ" firstAttribute="centerX" secondItem="jOs-Zu-yiM" secondAttribute="centerX" id="cyu-4l-YTr"/>
                         <constraint firstItem="yip-mZ-IbZ" firstAttribute="top" secondItem="jOs-Zu-yiM" secondAttribute="top" constant="170" id="dnC-ET-20l"/>
+                        <constraint firstItem="vYj-Eg-6lE" firstAttribute="centerX" secondItem="UQp-vE-ZK7" secondAttribute="centerX" id="eff-QD-eLM"/>
                         <constraint firstItem="Otn-8A-XEJ" firstAttribute="top" secondItem="P6Z-DN-FeR" secondAttribute="bottom" constant="10" id="m9P-yQ-xrr"/>
+                        <constraint firstItem="yip-mZ-IbZ" firstAttribute="top" secondItem="UQp-vE-ZK7" secondAttribute="bottom" constant="43" id="myv-VP-GAc"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,7 +102,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jOs-Zu-yiM" secondAttribute="trailing" id="vjf-sz-DKL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jOs-Zu-yiM" secondAttribute="bottom" id="yDQ-3F-eV0"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="99"/>
+            <point key="canvasLocation" x="131.8840579710145" y="98.4375"/>
         </view>
     </objects>
     <resources>
